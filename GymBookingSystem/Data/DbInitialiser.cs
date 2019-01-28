@@ -18,11 +18,11 @@ namespace GymBookingSystem.Models
 
             var bookings = new Booking[]
             {
-            new Booking{RoomID=1,ClassID=1,MemberID=1,ClassName="Yoga",Date=DateTime.Parse("2005-09-01"),Room="5A"},
-            new Booking{RoomID=2,ClassID=2,MemberID=2,ClassName="TaeBo",Date=DateTime.Parse("2005-09-01"),Room="3A"},
-            new Booking{RoomID=3,ClassID=3,MemberID=3,ClassName="Kickbox",Date=DateTime.Parse("2005-09-01"),Room="4"},
-            new Booking{RoomID=4,ClassID=4,MemberID=4,ClassName="Spinning",Date=DateTime.Parse("2005-09-01"),Room="1"},
-            new Booking{RoomID=5,ClassID=5,MemberID=5,ClassName="Pilates",Date=DateTime.Parse("2005-09-01"),Room="2"},
+            new Booking{RoomID=1,ClassID=1,MemberID=1,ClassName="Yoga",Date="01/02/2019 09:00",Room="5A"},
+            new Booking{RoomID=2,ClassID=2,MemberID=2,ClassName="TaeBo",Date="01/02/2019 11:00",Room="3A"},
+            new Booking{RoomID=3,ClassID=3,MemberID=3,ClassName="Kickbox",Date="01/02/2019 13:00",Room="4"},
+            new Booking{RoomID=4,ClassID=4,MemberID=4,ClassName="Spinning",Date="01/02/2019 16:00",Room="1"},
+            new Booking{RoomID=5,ClassID=5,MemberID=5,ClassName="Pilates",Date="01/02/2019 17:00",Room="2"},
             };
             foreach (Booking s in bookings)
             {
@@ -32,11 +32,11 @@ namespace GymBookingSystem.Models
 
             var classes = new Class[]
             {
-            new Class{ClassName="Yoga",RoomID=1,Date=DateTime.Parse("2005-09-01"),Instructor="Martin"},
-            new Class{ClassName="TaeBo",RoomID=2,Date=DateTime.Parse("2005-09-01"),Instructor="Kavita"},
-            new Class{ClassName="Kickbox",RoomID=3,Date=DateTime.Parse("2005-09-01"),Instructor="Remus"},
-            new Class{ClassName="Spinning",RoomID=4,Date=DateTime.Parse("2005-09-01"),Instructor="Juwon"},
-            new Class{ClassName="Pilates",RoomID=5,Date=DateTime.Parse("2005-09-01"),Instructor="Suraj"},
+            new Class{ClassName="Yoga",RoomID=1,Date="01/02/2019 09:00",Instructor="Martin"},
+            new Class{ClassName="TaeBo",RoomID=2,Date="01/02/2019 10:00",Instructor="Kavita"},
+            new Class{ClassName="Kickbox",RoomID=3,Date="01/02/2019 12:00",Instructor="Remus"},
+            new Class{ClassName="Spinning",RoomID=4,Date="01/02/2019 13:00",Instructor="Juwon"},
+            new Class{ClassName="Pilates",RoomID=5,Date="01/02/2019 15:00",Instructor="Suraj"},
             };
             foreach (Class c in classes)
             {

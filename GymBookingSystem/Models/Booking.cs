@@ -9,7 +9,7 @@ namespace GymBookingSystem.Models
         public int ClassID { get; set; }
         public int MemberID { get; set; }
         public string ClassName { get; set; }
-        public DateTime Date { get; set; }
+        public string Date { get; set; }
         public string Room { get; set; }
     }
 }

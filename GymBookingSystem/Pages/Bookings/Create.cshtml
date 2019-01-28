@@ -2,79 +2,56 @@
 @model GymBookingSystem.Pages.Bookings.CreateModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Book Class";
 }
 
-@*@section scripts{
-        <script>
-            $("#myTable tr").click(function () {
-                var celltext = $(this).text();
-                $("#txtName").val(celltext);
-            });
-        </script>
-    }*@
-
-<input id="txtName" type="text" />
 <table id="myTable">
     <thead>
         <tr>
-            <th>Class Name</th>
-            <th>Date</th>
-            <th>Room</th>
+            <th width="45%">Class Name</th>
+            <th width="45%">Date</th>
+            <th width="5%">Room</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>YOGA</td>
-            <td>08:00</td>
+            <td>01/02/2019 08:00</td>
             <td>2B</td>
         </tr>
         <tr>
-            <td>Kickboxing</td>
-            <td>09:00</td>
+            <td >Kickboxing</td>
+            <td>01/02/2019 09:00</td>
             <td>5B</td>
         </tr>
-        <tr>
+        <tr id="3">
             <td>Spinning</td>
-            <td>10:00</td>
+            <td>01/02/2019 10:00</td>
             <td>5A</td>
         </tr>
-        <tr>
+        <tr id="4">
             <td>Tae-Bo</td>
-            <td>11:00</td>
+            <td>01/02/2019 11:00</td>
             <td>1A</td>
         </tr>
         <tr>
             <td>Pilates</td>
-            <td>13:00</td>
+            <td>01/02/2019 13:00</td>
             <td>4C</td>
         </tr>
         <tr>
             <td>Circuit</td>
-            <td>14:00</td>
+            <td>01/02/2019 14:00</td>
             <td>5B</td>
         </tr>
         <tr>
             <td>Insanity</td>
-            <td>15:00</td>
+            <td>01/02/2019 15:00</td>
             <td>1A</td>
         </tr>
-        <div class="form-group">
-            <input type="submit" value="Book" class="btn btn-default" />
-        </div>
     </tbody>
 </table>
-@{
-    <script>
-        $("#myTable tr").click(function () {
-            var celltext = $(this).text();
-            Booking.ClassName = celltext
-            $("#txtName").val(celltext);
-        });
-    </script>
-};
 
-<h4>Classes</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -82,17 +59,17 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Booking.ClassName" class="control-label"></label>
-                <input asp-for="Booking.ClassName" class="form-control" />
+                <input asp-for="Booking.ClassName" readonly="readonly" id="name" class="form-control"/>
                 <span asp-validation-for="Booking.ClassName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Booking.Date" class="control-label"></label>
-                <input asp-for="Booking.Date" class="form-control" />
+                <input asp-for="Booking.Date" readonly="readonly" id="date" class="form-control"/>
                 <span asp-validation-for="Booking.Date" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Booking.Room" class="control-label"></label>
-                <input asp-for="Booking.Room" class="form-control" />
+                <input asp-for="Booking.Room" readonly="readonly" id="room" class="form-control"/>
                 <span asp-validation-for="Booking.Room" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -102,17 +79,17 @@
     </div>
 </div>
 
-<div>
-    <a asp-page="Index">Back to List</a>
-</div>
-
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     <script>
         $("#myTable tr").click(function () {
-            var celltext = $(this).text();
-            $("#txtName").val(celltext);
+            var className = $($(this).children()[0]).text()
+            $("#name").val(className);
+            var classDate = $($(this).children()[1]).text()
+            $("#date").val(classDate);
+            var classRoom = $($(this).children()[2]).text()
+            $("#room").val(classRoom);
         });
     </script>
 }
