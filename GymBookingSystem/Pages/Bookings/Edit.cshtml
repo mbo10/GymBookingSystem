@@ -1,0 +1,60 @@
+﻿@page
+@model GymBookingSystem.Pages.Bookings.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<h4>Bookings</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Booking.BookingID" />
+            <div class="form-group">
+                <label asp-for="Booking.RoomID" class="control-label"></label>
+                <input asp-for="Booking.RoomID" class="form-control" />
+                <span asp-validation-for="Booking.RoomID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Booking.ClassID" class="control-label"></label>
+                <input asp-for="Booking.ClassID" class="form-control" />
+                <span asp-validation-for="Booking.ClassID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Booking.MemberID" class="control-label"></label>
+                <input asp-for="Booking.MemberID" class="form-control" />
+                <span asp-validation-for="Booking.MemberID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Booking.ClassName" class="control-label"></label>
+                <input asp-for="Booking.ClassName" class="form-control" />
+                <span asp-validation-for="Booking.ClassName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Booking.Date" class="control-label"></label>
+                <input asp-for="Booking.Date" class="form-control" />
+                <span asp-validation-for="Booking.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Booking.Room" class="control-label"></label>
+                <input asp-for="Booking.Room" class="form-control" />
+                <span asp-validation-for="Booking.Room" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
